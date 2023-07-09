@@ -1,0 +1,35 @@
+(1) If you don't have python installed on your device then install Python:
+	-> First, you'll need to install Python on your system. Visit the official Python website (https://www.python.org/) and download the latest version of Python suitable for your operating system.
+	-> Run the installer and make sure to select the option to add Python to the system PATH during the installation process.
+
+(2) Open the terminal in your project root directory.
+
+(3) Write the following command serially and press enter for each command:
+
+	python -m venv myenv
+
+	myenv\Scripts\activate
+
+	python.exe -m pip install --upgrade pip
+
+	pip install django
+
+	pip install pandas
+
+	pip install openpyxl
+
+	pip install requests
+
+	pip install beautifulsoup4
+
+	pip install --upgrade google-api-python-client
+
+	python manage.py makemigrations
+
+	python manage.py migrate
+
+(4) Write the following command for run this system and press enter for each command:
+	
+	python manage.py runserver
+
+After that you will see it give you a link to your terminal or command prompt. Copy and paste this link into your web browser. After that you should see the home page, indicating that your project is running successfully.

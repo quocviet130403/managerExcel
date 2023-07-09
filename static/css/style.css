@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Home page css code */
+
+.custom-card{
+    background-color: #000;
+    color: #fff;
+    margin: 50px 0;
+    padding: 30px 0;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.btn{
+    background-color: #337ab7;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 40px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: .6s all;
+}
+
+.btn:hover{
+    background-color: #194b77;
+}
+
+.home_h{
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: bolder;
+}
+
+
+#upload_file .custom-card input[type="file"]{
+    background-color: #f5f5f5;
+    padding: 3px 10px;
+    color: #000;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.home_back{
+    color: #337ab7;
+    font-size: 18px;
+    transition: .5s all;
+    text-decoration: none;
+}
+
+.home_back:hover{
+    background-color: #f5f5f5;
+    color: #337ab7;
+    padding: 5px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.input_manually_form{
+    width: 50vw;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    padding: 40px 20px;
+    text-align: left !important;
+}
+
+.filter-card{
+    background-color: #000000;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    border-radius: 20px;
+    margin: 50px 0;
+}
+
+.filter-card form{
+    background-color: #804444;
+    border-radius: 20px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.filter-card form select{
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.filter-card form .radio_l{
+    font-size: 18px;
+}
+
+.allData-card{
+    background-color: #000;
+    color: #fff;
+    margin: 50px 0;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.edit_btn{
+    background-color: #3eeb1b;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 40px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: .6s all;
+}
+
+.edit_btn:hover{
+    background-color: #1e9905;
+    color: #fff;
+}
+
+.delete_btn{
+    background-color: #f71919;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 40px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: .6s all;
+}
+
+.id-color{
+    color:rgb(161, 252, 14);
+}
+
+.delete_btn:hover{
+    background-color: #970909;
+    color: #fff;
+}
+
+.chosen-container .chosen-choices {
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 3px;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+    color: #000000;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+    margin-left: 5px;
+    color: #000;
+}

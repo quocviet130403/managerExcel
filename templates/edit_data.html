@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Primary Meta Tags -->
+        <title>Report App | Edit Data</title>
+        <meta name="title" content="Report App">
+        <meta name="description" content="Report">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap 5 link -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+
+        <div id="home">
+            <div class="container">
+                <div class="custom-card">
+                    <h1 class="home_h">Edit Input Form</h1>
+                    <form method="POST" enctype="multipart/form-data" class="input_manually_form mb-5">
+                        {% csrf_token %}
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="first_name" id="firstName" value="{{data.first_name}}" placeholder="Enter your first name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="last_name" id="lastName" value="{{data.last_name}}" placeholder="Enter your last name">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" class="form-control" name="email" id="email" value="{{data.email}}" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-4">
+                            <input type="tel" class="form-control" name="phone" id="phone" value="{{data.phone}}" placeholder="Enter your telephone number">
+                        </div>
+                        <div class="mb-4">
+                            <input type="text" class="form-control" name="street_address" id="address" value="{{data.street_address}}" placeholder="Enter your street address">
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="city" id="city" value="{{data.city}}" placeholder="Enter your city">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="state" id="state" value="{{data.state}}" placeholder="Enter your state">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="country" id="country" value="{{data.country}}" placeholder="Enter your country">
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="organization_name" id="orgName" value="{{data.organization_name}}" placeholder="Enter your organization name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="title" id="title" value="{{data.title}}"  placeholder="Enter your title">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <input type="url" class="form-control" name="website" id="website" value="{{data.website}}" placeholder="Enter your website URL">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <input type="text" class="form-control" name="instagram" id="instagram" value="{{data.instagram}}" placeholder="Enter your instagram URL">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <input type="text" class="form-control" name="facebook" id="facebook" value="{{data.facebook}}" placeholder="Enter your facebook URL">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <input type="text" class="form-control" name="ticktock" id="ticktock" value="{{data.ticktock}}" placeholder="Enter your ticktock URL">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <input type="text" class="form-control" name="twitter" id="twitter" value="{{data.twitter}}" placeholder="Enter your twitter URL">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <input type="text" class="form-control" name="youtube" id="youtube" value="{{data.youtube}}" placeholder="Enter your youtube URL">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="form-control" name="description" id="description" rows="3" placeholder="Enter your description">{{data.description}}</textarea>
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="form-control" name="notes" id="notes" rows="3" placeholder="Enter your notes">{{data.notes}}</textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label class="d-block mb-2 fw-bolder">Choose one:</label>
+                            <input type="radio" id="church" value="church" name="type" {% if data.is_church %}checked{% endif %}>
+                            <label for="church" class="ms-3">Church</label><br>
+                            <input type="radio" id="organization" value="organization" name="type" {% if data.is_organization %}checked{% endif %}>
+                            <label for="organization" class="ms-3">Organization</label><br>
+                            <input type="radio" id="influencer" value="influencer" name="type" {% if data.is_influencer %}checked{% endif %}>
+                            <label for="influencer" class="ms-3">Influencer</label><br>
+                            <input type="radio" id="media" value="media" name="type" {% if data.is_media %}checked{% endif %}>
+                            <label for="media" class="ms-3">Media</label>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bolder">Services:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="services" id="monday" value="monday" {% if "monday" in data.services %}checked{% endif %}>
+                                <label class="form-check-label ms-2" for="monday">Monday</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="services" id="tuesday" value="tuesday" {% if "tuesday" in data.services %}checked{% endif %}>
+                                <label class="form-check-label ms-2" for="tuesday">Tuesday</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="services" id="wednesday" value="wednesday" {% if "wednesday" in data.services %}checked{% endif %}>
+                                <label class="form-check-label ms-2" for="wednesday">Wednesday</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="services" id="thursday" value="thursday" {% if "thursday" in data.services %}checked{% endif %}>
+                                <label class="form-check-label ms-2" for="thursday">Thursday</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="services" id="friday" value="friday" {% if "friday" in data.services %}checked{% endif %}>
+                                <label class="form-check-label ms-2" for="friday">Friday</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="services" id="saturday" value="saturday" {% if "saturday" in data.services %}checked{% endif %}>
+                                <label class="form-check-label ms-2" for="saturday">Saturday</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="services" id="sunday" value="sunday" {% if "sunday" in data.services %}checked{% endif %}>
+                                <label class="form-check-label ms-2" for="sunday">Sunday</label>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <input type="number" class="form-control" name="weekly_attendees" id="weekly_attendees" value="{{data.weekly_attendees}}" placeholder="Enter Weekly Attendees">
+                        </div>
+                        <div class="mb-5">
+                            <label class="form-label fw-bolder">Has Supported:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="has_supported" id="movieScreenings" value="movieScreenings" {% if "movieScreenings" in data.has_supported %}checked{% endif %}>
+                                <label class="form-check-label ms-2" for="movieScreenings">Movie Screenings</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="has_supported" id="meetings" value="meetings" {% if "meetings" in data.has_supported %}checked{% endif %}>
+                                <label class="form-check-label ms-2" for="meetings">Meetings</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="has_supported" id="events" value="events" {% if "events" in data.has_supported %}checked{% endif %}>
+                                <label class="form-check-label ms-2" for="events">Events</label>
+                            </div>
+                        </div>
+                        <div class="mt-5 d-flex justify-content-center">
+                            <button type="submit" class="btn submit_btn">Submit</button>
+                        </div>
+                    </form>   
+                    <a href="{% url 'allData' %}" class="home_back"><< Go To All Data Page</a>                            
+                </div>
+            </div>
+        </div>
+        <!-- javascript link -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>
+</html>
